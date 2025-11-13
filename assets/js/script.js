@@ -1,10 +1,9 @@
 $(function(){
+$(".login-card").hide();
 $("#btn-registro").click(function(){
-$(".login-card").fadeToggle(1200);
+$(".login-card").fadeToggle(600);
 $("..login-card")
+
 });
-
-
-
 
 });
