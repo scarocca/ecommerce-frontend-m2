@@ -1,4 +1,31 @@
 
+/*icono navbar*/
+
+
+#btn-icon {
+background-color: #444444;
+border-radius: 50%;
+
+}
+.icon-bg {
+      background-color: #f4f7fa; /* azul Bootstrap */
+      color: rgb(25, 26, 25);              /* color del ícono */
+      padding: 8px;              /* espacio interno */
+      border-radius: 50%;        /* forma redonda */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+   
+    }
+
+    /* Hover opcional */
+    .icon-bg:hover {
+      background-color:#333333;
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
 
 .login-card {
 position: fixed;
