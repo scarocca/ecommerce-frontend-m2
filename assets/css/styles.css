@@ -107,3 +107,20 @@ a:hover {
 .remove-from-cart {
     font-size: 0.9em;
 }
+
+/* --- OFFCANVAS DE LOGIN (ajustes adicionales para el oso) --- */
+
+.bear-avatar {
+    margin-top: 1rem; /* Espacio superior para el oso */
+    margin-bottom: 2rem; /* Espacio inferior entre el oso y el formulario */
+    position: relative;
+    z-index: 1; /* Asegura que el oso esté por encima de cualquier otro elemento que pueda solaparse */
+}
+
+/* Puedes añadir más estilos si quieres un círculo alrededor del oso, etc. */
+/* Por ejemplo: */
+.bear-avatar img {
+    border-radius: 50%; /* Si quieres que la imagen sea un círculo */
+    border: 3px solid #0dcaf0; /* Un borde sutil */
+    box-shadow: 0 0 15px rgba(13, 202, 240, 0.4); /* Sombra que haga juego con el botón */
+}

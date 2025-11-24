@@ -249,3 +249,43 @@ document.addEventListener('DOMContentLoaded', () => {
         // Llamar a updateCountdown una vez inmediatamente para evitar un retraso inicial
         updateCountdown();
     }
+
+    // --- Lógica del Oso en el Login ---
+    const bearLoginImg = document.getElementById('bear-login-img');
+    const passwordInputLogin = document.getElementById('password'); // Asegúrate de que este es el ID correcto de tu input de contraseña en el offcanvas
+
+    if (bearLoginImg && passwordInputLogin) {
+        // Función para cambiar la imagen del oso
+        function setBearImage(state) { // 'open' o 'closed'
+            if (state === 'closed') {
+                bearLoginImg.src = 'assets/img/bear-closed-eyes.png';
+                bearLoginImg.alt = 'Oso con ojos cerrados';
+            } else {
+                bearLoginImg.src = 'assets/img/bear-open-eyes.png';
+                bearLoginImg.alt = 'Oso con ojos abiertos';
+            }
+        }
+
+        // Cuando el campo de contraseña obtiene el foco (hace clic o tabula a él)
+        passwordInputLogin.addEventListener('focus', () => {
+            setBearImage('closed');
+        });
+
+        // Cuando el campo de contraseña pierde el foco
+        passwordInputLogin.addEventListener('blur', () => {
+            // Si el campo está vacío, abre los ojos. Si tiene texto, déjalos cerrados.
+            if (passwordInputLogin.value.length === 0) {
+                setBearImage('open');
+            }
+        });
+
+        // Opcional: Si quieres que el oso cierre los ojos solo cuando empieza a escribir
+        // y los abra si el campo se vacía mientras tiene el foco
+        passwordInputLogin.addEventListener('input', () => {
+             if (passwordInputLogin.value.length > 0) {
+                 setBearImage('closed');
+             } else {
+                 setBearImage('open');
+             }
+         });
+    }
