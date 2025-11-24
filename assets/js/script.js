@@ -289,3 +289,118 @@ document.addEventListener('DOMContentLoaded', () => {
              }
          });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const playerChoiceDisplay = document.getElementById('player-choice');
+    const computerChoiceDisplay = document.getElementById('computer-choice');
+    const resultMessage = document.getElementById('result-message');
+    const gameButtons = document.querySelectorAll('.game-choice');
+    const resetButton = document.getElementById('reset-game');
+
+    const choices = ['piedra', 'papel', 'tijera'];
+
+    function getComputerChoice() {
+        const randomIndex = Math.floor(Math.random() * choices.length);
+        return choices[randomIndex];
+    }
+
+    function determineWinner(playerChoice, computerChoice) {
+        if (playerChoice === computerChoice) {
+            return '¡Empate!';
+        }
+        if (
+            (playerChoice === 'piedra' && computerChoice === 'tijera') ||
+            (playerChoice === 'papel' && computerChoice === 'piedra') ||
+            (playerChoice === 'tijera' && computerChoice === 'papel')
+        ) {
+            return '¡Ganaste!';
+        } else {
+            return '¡Perdiste!';
+        }
+    }
+
+    function playGame(playerChoice) {
+        const computerChoice = getComputerChoice();
+
+        playerChoiceDisplay.textContent = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1); // Capitalizar
+        computerChoiceDisplay.textContent = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
+
+        const result = determineWinner(playerChoice, computerChoice);
+        resultMessage.textContent = result;
+
+        // Opcional: Estilizar el mensaje de resultado
+        resultMessage.classList.remove('text-success', 'text-danger', 'text-warning');
+        if (result === '¡Ganaste!') {
+            resultMessage.classList.add('text-success');
+        } else if (result === '¡Perdiste!') {
+            resultMessage.classList.add('text-danger');
+        } else {
+            resultMessage.classList.add('text-warning');
+        }
+    }
+
+    gameButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const playerChoice = e.currentTarget.dataset.choice;
+            playGame(playerChoice);
+        });
+    });
+
+    resetButton.addEventListener('click', () => {
+        playerChoiceDisplay.textContent = '?';
+        computerChoiceDisplay.textContent = '?';
+        resultMessage.textContent = '¡Haz tu elección!';
+        resultMessage.classList.remove('text-success', 'text-danger', 'text-warning');
+    });
+
+    // Código para el login offcanvas (si el offcanvas está en game.html también)
+    const bearLoginImg = document.getElementById('bear-login-img');
+    const passwordInputLogin = document.getElementById('password');
+
+    if (bearLoginImg && passwordInputLogin) {
+        function setBearImage(state) {
+            if (state === 'closed') {
+                bearLoginImg.src = 'assets/img/bear-closed-eyes.png';
+                bearLoginImg.alt = 'Oso con ojos cerrados';
+            } else {
+                bearLoginImg.src = 'assets/img/bear-open-eyes.png';
+                bearLoginImg.alt = 'Oso con ojos abiertos';
+            }
+        }
+
+        passwordInputLogin.addEventListener('focus', () => {
+            setBearImage('closed');
+        });
+
+        passwordInputLogin.addEventListener('blur', () => {
+            if (passwordInputLogin.value.length === 0) {
+                setBearImage('open');
+            }
+        });
+
+        passwordInputLogin.addEventListener('input', () => {
+             if (passwordInputLogin.value.length > 0) {
+                 setBearImage('closed');
+             } else {
+                 setBearImage('open');
+             }
+         });
+    }
+
+    // Código para actualizar el contador del carrito (si existe en game.html)
+    const cartCountElement = document.getElementById('cart-count');
+    let cart = JSON.parse(localStorage.getItem('cart')) || []; 
+
+    function updateCartCount() {
+        if (cartCountElement) { 
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+            if (totalItems > 0) {
+                cartCountElement.classList.remove('visually-hidden');
+            } else {
+                cartCountElement.classList.add('visually-hidden'); 
+            }
+        }
+    }
+    updateCartCount(); // Llama al cargar la página para inicializar el contador
+});
