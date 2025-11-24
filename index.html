@@ -2,122 +2,304 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecnoSergio</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElectroPrime</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100"> 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="#">TecnoSergio</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand fw-bold" href="index.html">ElectroPrime</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"></a>
-                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Zona Gammer
-                            </a>
-                            <!-- menu 1 -->
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Zona Gamer</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Consolas</a></li>
                                 <li><a class="dropdown-item" href="#">Videojuegos</a></li>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <hr class="dropdown-divider" />
                                 </li>
                                 <li><a class="dropdown-item" href="#">Accesorios</a></li>
                             </ul>
                         </li>
-                        <!-- menu2 -->
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Computacion
-                            </a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Computación</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Notbook</a></li>
-                                <li><a class="dropdown-item" href="#">Tables</a></li>
-                                 <li><a class="dropdown-item" href="#">Celulares</a></li>
+                                <li><a class="dropdown-item" href="#">Notebook</a></li>
+                                <li><a class="dropdown-item" href="#">Tablets</a></li>
+                                <li><a class="dropdown-item" href="#">Celulares</a></li>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <hr class="dropdown-divider" />
                                 </li>
-                                <li><a class="dropdown-item" href="#">monitores</a></li>
+                                <li><a class="dropdown-item" href="#">Monitores</a></li>
                             </ul>
                         </li>
-                        <!-- menu3 -->
-                       <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Audio
-                            </a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Audio</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Parlantes</a></li>
-                                <li><a class="dropdown-item" href="#">Audifonos</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
+                                <li><a class="dropdown-item" href="#">Audífonos</a></li>
                             </ul>
                         </li>
+                       <li class="nav-item">
+    <a class="nav-link fw-bold text-warning" href="game.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-controller me-1"></i> Jugar!</a>
+</li>
                     </ul>
-                 </div>
+                </div>
+                    </ul>
+                </div>
+                    </ul>
+                </div>
+
+                <a href="carrito.html" target="_blank"  class="btn btn-primary position-relative me-3">
+                    <i class="bi bi-cart-fill"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
+                        0
+                        <span class="visually-hidden">Productos en el carrito</span>
+                    </span>
+                </a>
+
+                <button id="openLoginBtn" class="btn btn-primary" data-bs-toggle="offcanvas"
+                    data-bs-target="#loginOffcanvas">
+                    Registrarse
+                </button>
+
             </div>
-             <button id="btn-registro" type="submit" class="btn btn-primary w-1">registrarse</button>
         </nav>
     </header>
-      <div class="row">
-          <div class="col-12 col-md-8"></div>
 
-        <div class="login-card col-12 col-md-2 ">
-    <h3 class="text-center mb-4">Iniciar Sesión</h3>
-
-    <form id="formulario">
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" placeholder="usuario@correo.com" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="********" required>
-      </div>
-
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="recordar">
-        <label class="form-check-label" for="recordar">Recordarme</label>
-      </div>
-
-      <button type="submit" class="btn btn-primary w-100">Entrar</button>
-    </form>
-    
-
-    <div class="text-center mt-3">
-      <a href="#">¿Olvidaste tu contraseña?</a><br>
-      <a href="#">Crear cuenta nueva</a>
-    </div>
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="loginOffcanvas" aria-labelledby="loginOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="loginOffcanvasLabel">Iniciar sesión</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-       
-         
-      </div>
 
- 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
-            <script src="assets/js/script.js"></script>
+        <div class="offcanvas-body d-flex flex-column align-items-center"> <div class="bear-avatar mb-4">
+                <img id="bear-login-img" src="assets/img/bear-open-eyes.png" alt="Oso con ojos abiertos" class="img-fluid" style="width: 120px; height: 120px; object-fit: cover;">
+            </div>
+            <div id="errorBox" class="alert alert-danger w-100" style="display: none;" role="alert">
+                </div>
+
+            <form id="loginForm" class="w-100"> <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control bg-dark text-white border-secondary" id="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control bg-dark text-white border-secondary" id="password" required>
+                        <button class="btn btn-outline-secondary text-white" type="button" id="togglePassword" aria-label="Mostrar/Ocultar Contraseña">
+                            <i class="bi bi-eye-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit">Ingresar</button>
+
+                <div class="mt-3 text-center">
+                    <a href="#" class="text-info">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <main class="flex-grow-1"> <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    class="active"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/pexels-pavel-danilyuk-8000622.jpg" class="d-block w-100"
+                        style="height: 400px; object-fit: cover;" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Bienvenido a ElectroPrime</h5>
+                        <p>Descubre nuestras mejores ofertas.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="assets/img/mujer-de-angulo-bajo-con-auriculares.jpg" class="d-block w-100"
+                        style="height: 400px; object-fit: cover;" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Los mejores precios</h5>
+                        <p>Audífonos de todas las marcas</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="assets/img/hombre-joven-que-trabaja-con-el-portatil-en-la-documentacion-de-su-empresa-persona-de-negocios-en-el-lugar-de-trabajo.jpg"
+                        class="d-block w-100" style="height: 400px; object-fit: cover;" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Notebook Gamer</h5>
+                        <p>Todas las marcas</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <section class="container my-5 py-5 text-center bg-light rounded shadow-sm">
+            <h2 class="display-6 fw-bold mb-4 text-primary">¡La Navidad se acerca!</h2>
+            <p class="lead mb-4">No te quedes sin tus regalos. Grandes ofertas te esperan.</p>
+            <div id="countdown" class="d-flex justify-content-center flex-wrap gap-4 mb-4">
+                <div class="p-3 bg-dark text-white rounded shadow-sm">
+                    <span id="days" class="display-4 fw-bold">00</span>
+                    <p class="lead mb-0">Días</p>
+                </div>
+                <div class="p-3 bg-dark text-white rounded shadow-sm">
+                    <span id="hours" class="display-4 fw-bold">00</span>
+                    <p class="lead mb-0">Horas</p>
+                </div>
+                <div class="p-3 bg-dark text-white rounded shadow-sm">
+                    <span id="minutes" class="display-4 fw-bold">00</span>
+                    <p class="lead mb-0">Minutos</p>
+                </div>
+                <div class="p-3 bg-dark text-white rounded shadow-sm">
+                    <span id="seconds" class="display-4 fw-bold">00</span>
+                    <p class="lead mb-0">Segundos</p>
+                </div>
+            </div>
+            <p class="text-muted">¡Apresúrate, el tiempo vuela!</p>
+        </section>
+
+        <section id="productos" class="container my-5">
+            <h2 class="text-center mb-5 display-5 fw-bold">Nuestros Productos Destacados</h2>
+            </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <img src="assets/img/audifonos.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <h5 class="card-title">Audífonos Sony</h5>
+                            <p class="card-text">$59.990</p> <button class="btn btn-primary w-100 add-to-cart-btn" data-product-id="1"
+                                data-product-name="Audífonos Sony" data-product-price="59990"
+                                data-product-image="assets/img/audifonos.jpg">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <img src="assets/img/xbox-one.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <h5 class="card-title">Xbox Serie S</h5>
+                            <p class="card-text">$299.990</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" data-product-id="2"
+                                data-product-name="Xbox Serie S" data-product-price="299990"
+                                data-product-image="assets/img/xbox-one.jpg">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <img src="assets/img/notbook-core7.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <h5 class="card-title">Notebook Gamer Victus</h5>
+                            <p class="card-text">$1.399.990</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" data-product-id="3"
+                                data-product-name="Notebook Gamer Victus" data-product-price="1399990"
+                                data-product-image="assets/img/notbook-core7.jpg">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 text-center">
+                        <img src="assets/img/iphone-17.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <h5 class="card-title">iPhone 17 256GB</h5>
+                            <p class="card-text">$999.990</p>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" data-product-id="4"
+                                data-product-name="iPhone 17 256GB" data-product-price="999990"
+                                data-product-image="assets/img/iphone-17.jpg">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-auto py-4 bg-dark text-white-50">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase mb-3">ElectroPrime</h5>
+                    <p>Tu tienda digital con los mejores productos y atención personalizada.</p>
+                    <div>
+                        <a href="#" class="text-white-50 me-2"><i class="bi bi-facebook footer-icon"></i></a>
+                        <a href="#" class="text-white-50 me-2"><i class="bi bi-instagram footer-icon"></i></a>
+                        <a href="#" class="text-white-50 me-2"><i class="bi bi-twitter-x footer-icon"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-github footer-icon"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase mb-3">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Inicio</a></li>
+                        <li><a href="#" class="text-white-50">Productos</a></li>
+                        <li><a href="#" class="text-white-50">Ofertas</a></li>
+                        <li><a href="#" class="text-white-50">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase mb-3">Contacto</h5>
+                    <p class="text-white-50"><i class="bi bi-geo-alt-fill me-2"></i> Santiago, Chile</p>
+                    <p class="text-white-50"><i class="bi bi-telephone-fill me-2"></i> +56 9 1234 5678</p>
+                    <p class="text-white-50"><i class="bi bi-envelope-fill me-2"></i> contacto@misitio.cl</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="copyright bg-dark text-white-50 py-2"> <p class="mb-0">&copy; 2025 tecnoSergio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
