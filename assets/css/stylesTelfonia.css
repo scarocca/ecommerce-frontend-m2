@@ -1,0 +1,38 @@
+.card-img-top {
+  height: 250px;      /* tamaño uniforme del contenedor */
+  object-fit: contain;  /* muestra la imagen completa */
+  width: 100%;
+  background-color: #fff; /* opcional: un fondo para las imágenes más pequeñas */
+  padding: 10px;  /* evita que quede tan pegada al borde */
+}
+/* ---- CARDS ECOMMERCE ---- */
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  height: 260px;             /* Altura uniforme */
+  object-fit: contain;       /* Muestra la imagen completa */
+  width: 100%;
+  background-color: #f8f9fa; /* Fondo ligero estilo Amazon */
+  padding: 15px;             /* Espacio alrededor */
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #212529;
+}
