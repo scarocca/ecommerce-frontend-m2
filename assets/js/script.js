@@ -258,10 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Función para cambiar la imagen del oso
         function setBearImage(state) { // 'open' o 'closed'
             if (state === 'closed') {
-                bearLoginImg.src = 'assets/img/bear-closed-eyes.png';
+                bearLoginImg.src = 'assets/img/oso-ojos-cerrados.png';
                 bearLoginImg.alt = 'Oso con ojos cerrados';
             } else {
-                bearLoginImg.src = 'assets/img/bear-open-eyes.png';
+                bearLoginImg.src = 'assets/img/oso-ojos-abiertos.png';
                 bearLoginImg.alt = 'Oso con ojos abiertos';
             }
         }
@@ -404,3 +404,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateCartCount(); // Llama al cargar la página para inicializar el contador
 });
+
