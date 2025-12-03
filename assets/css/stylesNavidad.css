@@ -1,0 +1,82 @@
+/* 🎄 NAVIDAD - Tema de colores */
+
+/* Fondo general muy suave */
+body {
+    background: linear-gradient(rgba(240, 0, 0, 0.05), rgba(0, 70, 0, 0.05));
+}
+
+/* Títulos con color rojo navideño */
+h2, h5, .card-title {
+    color: #b30000 !important; /* rojo navidad */
+}
+
+/* Botones en verde navidad */
+.btn-primary {
+    background-color: #0c7a33 !important;
+    border-color: #0a652b !important;
+}
+
+.btn-primary:hover {
+    background-color: #0e8c3a !important;
+}
+
+/* ❄️ Efecto de borde dorado en las tarjetas */
+.product-card {
+    border: 2px solid #d4a017; /* dorado */
+    border-radius: 12px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(212, 160, 23, 0.7);
+}
+
+/* Imágenes de productos */
+.product-img {
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #d4a017;
+}
+
+/* Precios en dorado */
+.price {
+    color: #d4a017;
+    font-weight: bold;
+}
+
+/* 🛒 Ítems del contador con bordes navideños */
+#countdown .p-3 {
+    border: 2px solid #d4a017;
+    background-color: #0c7a33 !important;
+}
+
+/* Texto del carrusel en rojo/dorado */
+.carousel-caption h5 {
+    color: #ffe08a !important; /* dorado suave */
+    text-shadow: 2px 2px 6px black;
+}
+
+.carousel-caption p {
+    color: #ffdddd !important; /* rosado suave */
+}
+
+/* NAVBAR (si quieres un toque navideño general) */
+.navbar, #navbar-container {
+    background: linear-gradient(90deg, #b30000, #0c7a33) !important;
+}
+
+/* Footer navideño */
+footer, #footer-container {
+    background: linear-gradient(90deg, #0c7a33, #b30000);
+    color: #fff;
+}
+
+/* Links navideños */
+a {
+    color: #d4a017 !important;
+}
+
+a:hover {
+    color: #ffea9e !important;
+}
